@@ -17,6 +17,9 @@ html {
         text-align: justify;
     }
 
+    a {
+      text-decoration: none;
+    }
     .button-37 {
         background-color: #13aa52;
         border: 1px solid;
