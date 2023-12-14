@@ -53,12 +53,14 @@ html {
 
 .log-form {
   width: 40%;
+  height: 100%;
   min-width: 320px;
   max-width: 475px;
   background: #fff;
   position: absolute;
   top: 50%;
   left: 50%;
+  margin-bottom: 68px;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
