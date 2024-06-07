@@ -46,6 +46,21 @@ html {
     }
 
 
+.book a:link {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+.book a:visited {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+.book a:hover {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
     
 * {
   box-sizing: border-box;
