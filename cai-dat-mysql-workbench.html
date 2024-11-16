@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Mysql Workbench</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Darker Grotesque' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+
+
+<style type="text/css">
+    blockquote{
+        line-height: 3;
+    }
+</style>
+
+
+<body>
+    <center>
+        <h2>Cách Cài Đặt & Sử Dụng Mysql Workbench<h2>
+    </center>
+
+ 
+    <h3>1. Tải file cài đặt:</h3>
+    <blockquote>
+        <li> Tải <strong>MySQL Community Server</strong>, có thể tìm thấy trên trang chủ MySQL <a href="https://dev.mysql.com/downloads/", target="_blank">https://dev.mysql.com/downloads/</a> hoặc tải về <a href="https://dev.mysql.com/downloads/windows/installer/8.0.html", target="_blank">tại đây</a>.</li>
+        <li>Chọn phiên bản MySQL cần cài đặt và hệ điều hành thích hợp. Sau đó chọn <strong>Download</strong> file có kích thước lớn hơn. </li>
+        <img src="figures/1.png" width="480">
+        <li>Tại trang Download, chọn <strong>No thanks, just start my download.</strong></li>
+        <img src="figures/2.png" width="480">
+    </blockquote>
+
+    <h3>2. Cài đặt MySQL Server và MySQL Workbench</h3>
+    <blockquote>
+        <li>Thực hiện cài đặt MySQL Community Server bằng cách nhấp đúp vào file đã tải về (<strong>file.msi</strong>) trên trình cài đặt MySQL.</li>
+        <img src="figures/23.png" width="360">
+        <li> Tại cửa sổ <strong>Choosing a Setup Type</strong>, chọn tùy chọn <strong>Custom</strong> (nếu bạn cần sử dụng nhiều tính năng hơn thì chọn Full). Sau đó chọn <strong>Next</strong>.</li>
+        <img src="figures/3.png" width="480">
+        <li>Tại cửa sổ <strong>Select Products</strong>, các bạn nhấp vào dấu (+) để chọn và thêm. Sau đó nhấn mũi tên trỏ sang bên phải.</li>
+        <img src="figures/4.png" width="480">
+        <li>Trong phần MySQL Servers, chọn phiên bản cài đặt MySQL Server.</li>
+        <img src="figures/5.png" width="480">
+        <li>Tiếp tục, ở phần Application section, thực hiện tương tự. </li>
+        <img src="figures/6.png" width="480">
+        <li>Sau khi chọn phiên bản cài đặt MySQL Server và MySQL Workbench. Nhấn chọn <strong>Next</strong>.</li>
+        <img src="figures/7.png" width="480">
+        <li>Tại cửa sổ <strong>Download</strong>, các bạn kiểm tra lại các phiên bản cần cài đặt, sau đó chọn <strong>Excute</strong>.</li>
+        <img src="figures/8.png" width="480">
+        <li>Sau khi quá trình tải về hoàn tất, chọn <strong>Next</strong>.</li>
+        <img src="figures/9.png" width="480">
+        <li>Tiếp tục chọn <strong>Excute</strong>.</li>
+        <img src="figures/10.png" width="480">
+        <li>Sau khi đã cài đặt xong, các bạn chọn <strong>Next</strong>.</li>
+        <img src="figures/11.png" width="480">
+    </blockquote>
+
+
+    <h3>3. Cấu hình Server</h3>
+    <blockquote>
+        <li>Ở bước này, bạn tiếp tục cấu hình MySQL Server. Chọn <strong>Next</strong>.</li>
+        <img src="figures/12.png" width="480">
+        <li>Bạn chọn cấu hình loại <strong>Development Computer</strong> và Connectivity là <strong>TCP/IP</strong>, Port là <strong>3306</strong>. Sau đó chọn <strong>Next</strong>.</li>
+        <img src="figures/13.png" width="480">
+        <li>Chọn Authentication Method, sau đó nhấn <strong>Next</strong>.</li>
+        <img src="figures/14.png" width="480">
+        <li> Nhập mật khẩu đăng nhập vào server rồi chọn <strong>Next</strong>.</li>
+        <img src="figures/15.png" width="480">
+        <li> Ở cửa sổ <strong>Windows Service</strong>, chọn thiết lập mặc định rồi chọn <strong>Next</strong>.</li>
+        <img src="figures/16.png" width="480">
+        <li> Ở cửa sổ <strong>Server File Permissions</strong>, để thiết lập mặc định rồi chọn <strong>Next</strong>.</li>
+        <img src="figures/17.png" width="480">
+        <li> Chọn <strong>Excute</strong> để tiến hành cấu hình server.</li>
+        <img src="figures/18.png" width="480">
+        <li> Khi cấu hình hoàn tất, bạn chọn <strong>Finish</strong> để tiếp tục.</li>
+        <img src="figures/19.png" width="480">
+        <li> Chọn <strong>Next</strong>.</li>
+        <img src="figures/20.png" width="480">
+        <li> Quá trình cài đặt hoàn tất! Chọn <strong>Finish</strong>.</li>
+        <img src="figures/21.png" width="480">
+    </blockquote>
+
+
+    <h3>4. Sử Dụng Mysql Workbench</h3>
+    <blockquote>
+        <li>Sau khi hoàn tất cài đặt, ứng dụng <strong>MySQL Workbench</strong> sẽ mở ra một cửa sổ như hình bên dưới, tại phần <strong>MySQL Connnections</strong>, các bạn nhấp đúp chuột vào phần được chỉ định như hình.</li>
+        <img src="figures/22.png" width="480">
+
+        <li>Đăng nhập bằng mật khẩu đã tạo trước đó để kết nối đến server. </li>
+        <img src="figures/24.png" width="480">
+
+        <li>Sau khi kết nối đến server thành công, màn hình làm việc của MySQL Workbench sẽ hiện ra như hình</li>
+        <img src="figures/25.png" width="480">
+    </blockquote>
+
+    <br><br>
+    <a href="index.html">Return to Homepage</a>
+
+    <br><br>
+
+
+
+</body>
+
+</html>
