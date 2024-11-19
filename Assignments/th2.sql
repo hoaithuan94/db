@@ -1,43 +1,47 @@
-DROP DATABASE IF EXISTS QUANLYTHITUYENSINH;
-CREATE DATABASE QUANLYTHITUYENSINH;
+DROP DATABASE IF EXISTS QuanLyThiTuyenSinh;
+CREATE DATABASE QuanLyThiTuyenSinh;
 
-USE QUANLYTHITUYENSINH;
+USE QuanLyThiTuyenSinh;
 
 
--- Tạo bảng MONTHI
+-- Tạo bảng MonThi
 /*
-CREATE TABLE MONTHI(
-    MON VARCHAR(6) NOT NULL UNIQUE,
-    HESO INT,
-    GHICHU VARCHAR(50),
+CREATE TABLE MonThi(
+    mon VARCHAR(6) NOT NULL UNIQUE,
+    heso INT,
+    ghichu VARCHAR(50),
 
-    CONSTRAINT MONTHI_PK PRIMARY KEY(MON)
+    CONSTRAINT monthi_pk PRIMARY KEY(mon)
 );
 */
 
 
--- Tạo bảng THISINH
+-- Tạo bảng ThiSinh
 
 
 
--- Tạo bảng KETQUA
+-- Tạo bảng KetQua
 
 
 
-# THÊM DỮ LIỆU VÀO BẢNG MONTHI
-INSERT INTO MONTHI VALUES 
-('TIN',2,'Môn chuyên cho lớp chuyên TIN'),
+# Thêm dữ liệu vào bảng MonThi
+INSERT INTO MonThi VALUES 
+('TIN',2,'Môn chuyên cho lớp chuyên tin'),
+('LY',2,'Môn chuyên cho lớp chuyên lý'),
+('HOA',2,'Môn chuyên cho lớp chuyên hóa'),
 ('TOAN',2,'Môn chung cho tất cả thí sinh'),
 ('VAN',1,'Môn chung cho tất cả thí sinh'),
-('TOANCH',2,'Môn chuyên cho lớp chuyên TOAN'),
-('VANCH',2,'Môn chuyên cho lớp chuyên VAN');
+('TOANCH',2,'Môn chuyên cho lớp chuyên toán'),
+('VANCH',2,'Môn chuyên cho lớp chuyên ngữ văn');
 
 
-# THÊM DỮ LIỆU VÀO BẢNG THISINH
+# Thêm dữ liệu vào bảng ThiSinh
 	
 
 
-# THÊM DỮ LIỆU VÀO BẢNG KETQUA
+# Thêm dữ liệu vào bảng KetQua
+
+#...
 
 
 
