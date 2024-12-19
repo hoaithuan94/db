@@ -1,0 +1,76 @@
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Answer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Darker Grotesque' rel='stylesheet'>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+
+
+<body>
+    <center>
+        <h2>Nội dung trả lời<h2>
+    </center>
+
+    <center>
+        <input type="text" id="userId" placeholder="MSSV"></input><br>
+        <textarea id="userInput" placeholder="Nhập câu trả lời..."></textarea><br>
+        <span id="stt"> &nbsp </span><br>
+        <button class="button-37" id="sentButton">Gửi<i class="fa fa-upload"></i></button>
+    </center>
+
+
+    <h3>Danh sách trả lời:</h3>
+
+    <div class="container" id = 'answerList'>
+    <div class="box"><div class="label">1291736</div>CREATE TABLE NhanVien (
+    manv    CHAR(4), 
+    hoten   VARCHAR(50),
+    sdt VARCHAR(20),
+    ngvl    DATE,
+    manv    CHAR(4), 
+    hoten   VARCHAR(50),
+    sdt VARCHAR(20),
+    ngvl    DATE
+    manv    CHAR(4), 
+    hoten   VARCHAR(50),
+    sdt VARCHAR(20),
+    ngvl    DATE
+);;</div>
+    </div>
+
+</body>
+
+
+<script type="text/javascript">
+    const userid = document.getElementById('userId');
+    const text_input = document.getElementById('userInput');
+    const sent_btn = document.getElementById('sentButton');
+    const answer_list = document.getElementById('answerList');
+    const stt = document.getElementById('stt');
+
+    sent_btn.addEventListener('click', function() {
+
+        if (userid && text_input && text_input.value && userid.value) {
+            var e = document.createElement('div');
+            e.innerHTML='<div class="box"><div class="label">'+userid.value.trim()+'</div>'+text_input.value.trim()+'</div>';
+            answer_list.appendChild(e.firstChild);
+
+            stt.innerHTML = "Đã gửi câu trả lời!";
+            //sent_btn.disabled = true;
+        }
+        else
+            stt.innerHTML = "Empty input!";
+
+        
+    });
+
+</script>
+</html>
+
