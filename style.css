@@ -24,9 +24,14 @@ html {
 }
 
 
+.col2{
+    width: 48%;
+}
+
+
 .box {
     position: relative;
-    font-family: "Darker Grotesque";
+    font-family: courier;
     width: 30%; 
     min-height: 50px;
     max-height: 200px;
@@ -41,7 +46,8 @@ html {
 }
 
 .label {
-  color: red;
+  color: green;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -62,16 +68,19 @@ html {
 }
 
 
-.rm{
+.bbox{
     width: 150px; 
     height: 150px; 
     background: transparent; 
     border: none;
     position: fixed;
     bottom: 0;
-    right: 0;
 }
 
+.keyword{
+    color:#08a4a7;
+    font-size: 18px;
+}
 
 .book a:link {
   color: red;
@@ -89,16 +98,25 @@ html {
 
 
 input[type='text'] {
-  width: 320px;
+  width: 90%;
   padding: 10px;
   margin: 5px;
   border: 1px solid #ccc;
+  outline: none;
 }
 
 textarea {
-  width: 320px;
+  font-size: 18px;
+  font-family: courier;
+  width: 90%;
   height: 120px;
   padding: 10px;
+  resize: none;
+  outline: none;
+}
+
+.question textarea {
+  height: 165px;
 }
 
 
