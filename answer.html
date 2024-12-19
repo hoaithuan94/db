@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Answer</title>
+    <title>Answer Page</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Darker Grotesque' rel='stylesheet'>
@@ -18,174 +18,26 @@
 <body>
     
     <div class="container">
-
-    <center class="col2 question">
-        <h2>Câu hỏi<h2>
-        <textarea id="quesInput" disabled></textarea><br>
-    </center>
-
-    <center class="col2">
-        <h2>Nội dung trả lời<h2>
-        <input type="text" id="userId" placeholder="Mã sinh viên hoặc tên"></input><br>
-        <textarea id="userInput" placeholder="Nhập câu trả lời..."></textarea><br>
-        <span id="stt"> &nbsp </span><br>
-        <button class="button-37" id="sentButton">Gửi <i class="fa fa-send"></i></button>
-    </center>
-
+        <center class="col2 question">
+            <h2>Top<h2>
+            <textarea id="quest" disabled>s</textarea><br>
+        </center>
+        <div class="col2" style="text-align: center;">
+             <i class="fa fa-question"></i><h3 id="question"><h3>
+            <input type="text" id="mssv" placeholder="Mã sinh viên"></input><br>
+            <textarea id="answer_input" placeholder="Nhập câu trả lời..."></textarea><br>
+            <span id="stt"> &nbsp </span><br>
+            <button class="button-37" id="sentButton">Gửi <i class="fa fa-send"></i></button>
+        </div>
     </div>
 
 
     <h3>Danh sách câu trả lời:</h3>
-
     <div class="container" id = 'answerList'></div>
 
-    <button id="rm" class="bbox" style="right:0"></button>
-    <button id="ques" class="bbox" style="left:0"></button>
 
 </body>
 
-
-<script type="module">
-
-
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-    import { getFirestore, collection, doc, addDoc, getDocs, setDoc, deleteDoc, serverTimestamp, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
-
-
-    const firebaseConfig = {
-    apiKey: "AIzaSyAjIZdSKHn1ru_QEZJ1jvzQlVnziXgLbG8",
-    authDomain: "answer-gdu.firebaseapp.com",
-    projectId: "answer-gdu",
-    storageBucket: "answer-gdu.firebasestorage.app",
-    messagingSenderId: "804480278025",
-    appId: "1:804480278025:web:30d3d01472168485c4a2d8",
-    measurementId: "G-V3MQD3TXVQ"
-    };
-
-    const keywords = ['DATABASE','DATABASES', 'SHOW', 'USE', 'TRUNCATE',  'PROC', 'MODIFY', 'INDEX', 'CONSTRAINT', 'REFERENCES', 'CALL', 'OUTPUT', 'WHILE', 'DO', 'FOR', 'DECLARE', 'PRIMARY', 'KEY', 'NOT', 'NULL', 'CHECK', 'AUTO_INCREMENT', 'RETURN', 'RETURNS', 'FUNCTION', 'RENAME', 'START', 'SAVEPOINT', 'SAVE', 'CURSOR', 'FETCH', 'OPEN', 'CLOSE', 'TOP', 'ROWNUM','PRINT','USER','FORMAT','CHAR_LENGTH','CONCAT_WS', 'DISTINCT','FOREIGN','TINYINT','DATEDIFF','GETDATE','CURRENT_','SESSION_', 'DATABASES','IF','IS','INT','OUT','SMALLINT','CHAR','VARCHAR','DECIMAL','DATETIME','DATE','FLOAT','MONEY', 'BIT', 'DATEDIFF','FOR','AFTER','PROCEDURE','STRCMP', 'LENGTH','NVARCHAR','PERCENT','LOGIN','WITH','PASSWORD','REVERT','GO', 'TO', 'OPTION', 'DENY','CONCAT','REPLACE','SELECT','WHERE','ALTER','TABLE','ADD','DELETE','INSERT','UPDATE','DROP','GROUP BY','HAVING','ORDER BY','LIMIT','ASC','DESC','LIKE','IN','BETWEEN','AND','OR','EXISTS','MIN','MAX','AVG','USING','JOIN','INNER','LEFT','RIGHT','OUTER','UNION','AS','TRIGGER','SET','LIMITER'];
-
-
-
-
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-
-    const userid = document.getElementById('userId');
-    const text_input = document.getElementById('userInput');
-    const ques_input = document.getElementById('quesInput');
-    const answer_list = document.getElementById('answerList');
-    const sent_btn = document.getElementById('sentButton');
-    const stt = document.getElementById('stt');
-
-    let count = 0;
-
-    const ref_answers = collection(db, 'answers');
-    const ref_question= collection(db, 'question');
-
-    const ques = query(ref_question);
-    onSnapshot(ques, (snapshot) => {
-      snapshot.forEach((doc) => {
-
-        const question = doc.data();
-        ques_input.innerHTML = question.text;
-
-      });
-    });
-
-    const ans = query(ref_answers, orderBy('timestamp'));
-    onSnapshot(ans, (snapshot) => {
-
-      count = snapshot.size;
-      answer_list.innerHTML = '';
-      snapshot.forEach((doc) => {
-
-        const answer = doc.data();
-        const e = document.createElement('div');
-        const id = answer.id;
-        let text = answer.text;
-
-        keywords.forEach((keyword, index) => {
-          const regex_key = new RegExp(`\\b${keyword}\\b`, "gi");
-          text = text.replace(regex_key, `<span class="keyword">${keyword}</span>`);
-        });
-
-        const regex_str = /([']).*?\1/g;
-        text = text.replace(regex_str, (match, p1, p2) => {
-              return `<span style="color: orange;">${match}</span>`;
-        });
-
-        e.innerHTML = '<div class="box"><div class="label">-- '+id+'</div>'+text+'</div>';
-        answer_list.prepend(e.firstChild);
-
-      });
-    });
-
-
-    sent_btn.addEventListener('click', async (e) => {
-      e.preventDefault();
-
-      const mssv = userid.value.trim();
-      const text = text_input.value.trim()
-
-      if(count < 10){
-        if (mssv.trim() && text.trim()) {
-            text_input.value = '';
-            stt.innerHTML = "Bạn đã gửi câu trả lời cho câu hỏi này.";
-            sent_btn.disabled = true;
-            await addDoc(ref_answers, {
-                id: mssv,
-                text,
-                timestamp: serverTimestamp(),
-              });
-          }
-          else
-            stt.innerHTML = "Nội dung không đầy đủ!";
-      }else
-        stt.innerHTML = "Đã hết lượt!";
-
-
-    });
-
-
-
-    document.getElementById('ques').addEventListener('click', async (e) => {
-      e.preventDefault();
-      if(ques_input.disabled)
-         ques_input.disabled = false;
-      
-      else{
-        ques_input.disabled = true;
-        const text = ques_input.value.trim();
-
-        if(text.trim())
-            await setDoc(doc(db, 'question', '1'), { text: text});
-
-      }
-        
-    });
-
-    let i = 0;
-    document.getElementById('rm').addEventListener('click', async (e) => {
-      e.preventDefault();
-      i++; 
-      console.log(i);
-      if(i % 5 == 0){
-         const q = await getDocs(collection(db, 'answers'));
-         for (const document of q.docs)
-         await deleteDoc(doc(db, 'answers', document.id));
-
-         sent_btn.disabled = false;
-      }
-    });
-
-
-   text_input.addEventListener("paste",function(e) {
-      e.preventDefault();
-   });
-
-</script>
+<script type="module" src="js/answer.js"></script>
 </html>
 
