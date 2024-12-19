@@ -31,7 +31,7 @@ html {
     min-height: 50px;
     max-height: 200px;
     margin: 8px;
-    padding: 4px;
+    padding: 8px;
     text-align: left;
     background-color: white;
     border-radius: 10px;
@@ -51,7 +51,7 @@ html {
     border: 1px solid;
     border-radius: 4px;
     color: #fff;
-    width: 220px;
+    width: 320px;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 25px;
@@ -62,6 +62,15 @@ html {
 }
 
 
+.rm{
+    width: 150px; 
+    height: 150px; 
+    background: transparent; 
+    border: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
 
 
 .book a:link {
@@ -80,14 +89,14 @@ html {
 
 
 input[type='text'] {
-  width: 300px;
+  width: 320px;
   padding: 10px;
   margin: 5px;
   border: 1px solid #ccc;
 }
 
 textarea {
-  width: 300px;
+  width: 320px;
   height: 120px;
   padding: 10px;
 }
@@ -97,6 +106,8 @@ span{
   font-size: 14px;
   color: green;
 }
+
+
 
 
 @media screen and (max-width: 768px) {
