@@ -9,7 +9,7 @@ CREATE TABLE KhachHang (
     hoten VARCHAR(50),
     dchi VARCHAR(20),
     sdt VARCHAR(20),
-    ngsinh DATE,
+    ngsinh CHAR(4),
     doanhso DECIMAL(10,3),
     ngdk DATE
 );
