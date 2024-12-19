@@ -18,32 +18,50 @@ html {
         text-align: justify;
     }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    .button-37 {
-        background-color: #13aa52;
-        border: 1px solid;
-        border-radius: 4px;
-        box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
-        box-sizing: border-box;
-        color: #fff;
-        width: 220px;
-        cursor: pointer;
-        font-size: 16px;
-        outline: none;
-        outline: 0;
-        padding: 10px 25px;
-        text-align: center;
-        transform: translateY(0);
-        transition: transform 150ms, box-shadow 150ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-    }
 
-    .button-37:hover {
-        box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
-        transform: translateY(-2px);
-    }
+.box {
+    position: relative;
+    font-family: "Darker Grotesque";
+    width: 30%; 
+    min-height: 50px;
+    max-height: 200px;
+    margin: 8px;
+    padding: 4px;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    white-space: pre-wrap;
+    overflow: auto;
+}
+
+.label {
+  color: red;
+  font-weight: 600;
+}
+
+
+.button-37 {
+    background-color: #13aa52;
+    border: 1px solid;
+    border-radius: 4px;
+    color: #fff;
+    width: 220px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 25px;
+}
+
+.button-37:hover {
+    transform: translateY(-2px);
+}
+
+
 
 
 .book a:link {
@@ -60,41 +78,43 @@ html {
   box-sizing: border-box;
 }
 
-.log-form {
-  width: 40%; 
-  min-width: 320px;
-  max-width: 475px;
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+
+input[type='text'] {
+  width: 300px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
 }
 
-.log-form form {
-  padding: 2em;
+textarea {
+  width: 300px;
+  height: 120px;
+  padding: 10px;
 }
-.log-form input {
-  margin: auto auto;
-  width: 100%;
-  margin-bottom: 2em;
+
+
+span{
   font-size: 14px;
-  padding: 0.5em 0;
-  border: none;
-  border-bottom: 1px solid #eaeaea;
-  padding-bottom: 1.25em;
-  color: #757575;
-}
-.log-form input:focus {
-  outline: none;
+  color: green;
 }
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 768px) {
 
     body {
         left: 6px;
         right: 6px;
     }
 
+    .box {
+            width: 45%;
+    }
+        
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+            width: 100%;
+    }
+        
 }
