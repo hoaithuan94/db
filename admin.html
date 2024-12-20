@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Answer Admin</title>
+    <title>Admin</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Darker Grotesque' rel='stylesheet'>
@@ -25,7 +25,7 @@
         <div class="col2" style="text-align: center;">
             <textarea id="quest_input" placeholder="Nhập câu hỏi..."></textarea>
             <input type="text" id="max_ans_input" placeholder="Số câu trả lời tối đa" value="10"></input><br>
-            <button class="button-37" id="postButton">Đăng <i class="fa fa-send"></i></button>
+            <button class="button-37" id="postButton" disabled>Đăng <i class="fa fa-send"></i></button>
         </div>
     </div>
 
@@ -36,12 +36,13 @@
     <div class="container" id = 'answerList'></div>
 
     <center style="bottom: 0;right: 0; position: fixed;">
-        <button class="button-37" id="rmRank" style="background: red;">Clear Question <i class="fa fa-trash"></i></button>
-        <button class="button-37" id="rmQues" style="background: red;">Clear Ranking <i class="fa fa-trash"></i></button>
+        <button class="button-38" id="rmRank" disabled>Clear Question <i class="fa fa-trash"></i></button>
+        <button class="button-38" id="rmQues" disabled>Clear Ranking <i class="fa fa-trash"></i></button>
     </center>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script type="module" src="js/admin.js"></script>
 </html>
 
