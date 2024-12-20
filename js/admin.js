@@ -92,17 +92,19 @@ post_btn.addEventListener('click', async (e) => {
 
 document.getElementById('rmRank').addEventListener('click', async (e) => {
   e.preventDefault();
-    const q = await getDocs(collection(db, 'answers'));
     const batch = writeBatch(db);
-    q.forEach(doc => {batch.delete(doc.ref);});
+    const q1 = await getDocs(collection(db, 'answers'));
+    const q2 = await getDocs(collection(db, 'question'));
+    q1.forEach(doc => {batch.delete(doc.ref);});
+    q2.forEach(doc => {batch.delete(doc.ref);});
     await batch.commit();
     console.log('question cleared.')
 });
 
 document.getElementById('rmQues').addEventListener('click', async (e) => {
   e.preventDefault();
-    const q = await getDocs(collection(db, 'users'));
     const batch = writeBatch(db);
+    const q = await getDocs(collection(db, 'users'));
     q.forEach(doc => {batch.delete(doc.ref);});
     await batch.commit();
     console.log('ranking cleared.')
