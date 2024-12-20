@@ -92,21 +92,34 @@ body {
 }
 
 
-.button-37 {
-    background-color: #13aa52;
+button {
     border: 1px solid;
     border-radius: 4px;
     color: #fff;
-    width: 320px;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 25px;
 }
 
-.button-37:hover {
+button:hover {
     transform: translateY(-2px);
 }
 
+button :disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.button-37 {
+    background-color: #13aa52;
+    width: 320px;
+}
+
+.button-38 {
+    background-color: red;
+    width: 320px;
+}
 
 .keyword{
     color:#08a4a7;
