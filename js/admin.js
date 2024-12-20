@@ -1,9 +1,49 @@
 import { db, answerListCallback } from "./init.js";
-import { collection, doc, getDocs, getDoc, setDoc, deleteDoc, writeBatch } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { collection, doc, getDocs, getDoc, setDoc, deleteDoc, writeBatch, query, onSnapshot } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
 
 
-const post_btn = document.getElementById('postButton');
 const max_ans_input = document.getElementById('max_ans_input');
+const post_btn = document.getElementById('postButton');
+const rmRank_btn = document.getElementById('rmRank');
+const rmQues_btn = document.getElementById('rmQues');
+
+
+const ques = query(collection(db, 'key'));
+onSnapshot(ques, (snapshot) => {
+  snapshot.forEach((doc) => {
+    const key = doc.data().key;
+    Swal.fire({
+        title: "Enter your password!",
+        text: "Please type a password at least 6 characters.",
+        input: 'password',
+        showCancelButton: true,
+        allowEscapeKey : false,
+        allowOutsideClick: false       
+    }).then((result) => {
+        if (result.value) {
+             const hashedPassword = CryptoJS.SHA256(result.value).toString();
+             if (hashedPassword == key) {
+                post_btn.disabled   = false;
+                rmRank_btn.disabled = false;
+                rmQues_btn.disabled = false;
+
+                answerListCallback(handleAnswerListCallback);
+
+
+             }
+
+        }
+    });
+
+
+
+  });
+});
+
+
+
+
+
 
 
 function handleAnswerListCallback(newAnswerList) {
@@ -31,7 +71,6 @@ function handleAnswerListCallback(newAnswerList) {
   });
 }
 
-answerListCallback(handleAnswerListCallback);
 
 
 post_btn.addEventListener('click', async (e) => {
