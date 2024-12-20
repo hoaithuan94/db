@@ -24,6 +24,9 @@ body {
     flex-wrap: wrap;
 }
 
+#question{
+    text-align: justify;
+}
 
 .col2{
     width: 48%;
