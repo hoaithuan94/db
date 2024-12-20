@@ -19,18 +19,53 @@ body {
     text-align: justify;
 }
 
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation links */
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #00aaff;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
 }
 
-#question{
-    text-align: justify;
-}
-
 .col2{
     width: 48%;
     margin: 5px;
+}
+
+#question{
+    text-align: justify;
 }
 
 .box {
@@ -177,6 +212,19 @@ span{
         left: 6px;
         right: 6px;
     }
+
+    .navbar {
+      padding: 0px;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .nav-links li {
+      margin: 0 5px;
+    }
+
 
     .box {
         width: 100%;
