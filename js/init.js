@@ -44,7 +44,7 @@ onSnapshot(q, (snapshot) => {
 
 const ref_answers = collection(db, 'answers');
 export function answerListCallback(callback) {
-  const ansQuery = query(ref_answers, orderBy('timestamp'), limit(100));
+  const ansQuery = query(ref_answers, orderBy('timestamp'));
   onSnapshot(ansQuery, (snapshot) => {
   answer_list.innerHTML = '';
   const answer_mssv = [];
