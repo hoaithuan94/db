@@ -57,8 +57,8 @@ onSnapshot(q, (snapshot) => {
 
             if (docSnap.exists()) {
                 Swal.fire({
-                    title: "Score",
-                    text: "Tổng điểm đã tích lũy: " + docSnap.data().score + " điểm.",
+                    title: "Xin chào!",
+                    text: "Tổng điểm đã tích lũy của "+docSnap.data().name+" là " + docSnap.data().score + " điểm.",
                     icon: "info"
                 });
 
