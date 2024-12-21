@@ -33,6 +33,7 @@ onSnapshot(ques, (snapshot) => {
   });
 });
 
+
 function handleAnswerListCallback(newAnswerList) {
   let answerList = newAnswerList;
   const boxes = document.querySelectorAll('.box');
@@ -50,7 +51,7 @@ function handleAnswerListCallback(newAnswerList) {
         box.style.backgroundColor = 'lightgreen';
         currentScore += 0.1;
       }
-      await setDoc(docRef, { name: box.dataset.value, score: currentScore });
+      await setDoc(docRef, { name: box.dataset.value, score: currentScore.toFixed(1) });
       
     });
   });
