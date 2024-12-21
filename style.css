@@ -19,37 +19,37 @@ body {
 
 /* Navbar container */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-  color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
 }
 
 /* Logo */
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* Navigation links */
 .nav-links {
-  list-style: none;
-  display: flex;
+    list-style: none;
+    display: flex;
 }
 
 .nav-links li {
-  margin: 0 10px;
+    margin: 0 10px;
 }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
-  color: #00aaff;
+    color: #00aaff;
 }
 
 .container {
@@ -57,19 +57,19 @@ body {
     flex-wrap: wrap;
 }
 
-.col2{
+.col2 {
     width: 48%;
     margin: 5px;
 }
 
-#question{
+#question {
     text-align: justify;
 }
 
 .box {
     position: relative;
     font-family: courier;
-    width: 30%; 
+    width: 30%;
     min-height: 50px;
     max-height: 200px;
     margin: 8px;
@@ -85,9 +85,9 @@ body {
 
 
 .label {
-  color: green;
-  font-size: 16px;
-  font-weight: 600;
+    color: green;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 
@@ -105,9 +105,9 @@ button:hover {
 }
 
 button :disabled {
-  background-color: #cccccc;
-  color: #666666;
-  cursor: not-allowed;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
 }
 
 .button-37 {
@@ -120,100 +120,102 @@ button :disabled {
     width: 320px;
 }
 
-.keyword{
-    color:#08a4a7;
+.keyword {
+    color: #08a4a7;
     font-size: 18px;
 }
 
 
 
 .ranking-list {
-  height: 350px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  overflow: auto;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: auto;
 }
 
 .ranking-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    transition: transform 0.2s;
 }
 
 .ranking-list li:hover {
-  transform: scale(1.02);
-  background-color: #eef6ff;
+    transform: scale(1.02);
+    background-color: #eef6ff;
 }
 
 .ranking-list .rank {
-  background-color: #007bff;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .ranking-list .name {
-  font-size: 16px;
-  font-weight: bold;
-  color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
 }
 
 .ranking-list .score {
-  font-size: 14px;
-  color: #777;
+    font-size: 14px;
+    color: #777;
 }
 
 
 .book a:link {
-  color: red;
+    color: red;
 }
+
 .book a:visited {
-  color: red;
+    color: red;
 }
+
 .book a:hover {
-  color: green;
+    color: green;
 }
-    
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 
 input[type='text'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 6px;
-  border: 1px solid #ccc;
-  outline: none;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 6px;
+    border: 1px solid #ccc;
+    outline: none;
 }
 
 textarea {
-  font-size: 18px;
-  font-family: courier;
-  width: 100%;
-  height: 138px;
-  padding: 10px;
-  resize: none;
-  outline: none;
-  margin-bottom: 6px;
+    font-size: 18px;
+    font-family: courier;
+    width: 100%;
+    height: 138px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    margin-bottom: 6px;
 }
 
 
-span{
-  font-size: 14px;
-  color: green;
+span {
+    font-size: 14px;
+    color: green;
 }
 
 
@@ -226,15 +228,15 @@ span{
     }
 
     .navbar {
-      padding: 0px;
+        padding: 0px;
     }
 
     .logo {
-      display: none;
+        display: none;
     }
 
     .nav-links li {
-      margin: 0 5px;
+        margin: 0 5px;
     }
 
 
@@ -242,12 +244,12 @@ span{
         width: 100%;
     }
 
-    .col2{
+    .col2 {
         width: 100%;
     }
 
-    #answerList{
+    #answerList {
         min-height: 200px;
     }
-        
+
 }
