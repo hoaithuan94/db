@@ -97,8 +97,12 @@ document.getElementById('rmRank').addEventListener('click', async (e) => {
     const q2 = await getDocs(collection(db, 'question'));
     q1.forEach(doc => {batch.delete(doc.ref);});
     q2.forEach(doc => {batch.delete(doc.ref);});
-    await batch.commit();
-    console.log('question cleared.')
+    await batch.commit();   
+    Swal.fire({
+          icon: "success",
+          title: "question cleared.",
+          timer: 1500
+        });
 });
 
 document.getElementById('rmQues').addEventListener('click', async (e) => {
@@ -107,5 +111,9 @@ document.getElementById('rmQues').addEventListener('click', async (e) => {
     const q = await getDocs(collection(db, 'users'));
     q.forEach(doc => {batch.delete(doc.ref);});
     await batch.commit();
-    console.log('ranking cleared.')
+    Swal.fire({
+          icon: "success",
+          title: "ranking cleared.",
+          timer: 1500
+        });
 });
