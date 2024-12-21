@@ -7,7 +7,6 @@ const post_btn = document.getElementById('postButton');
 const rmRank_btn = document.getElementById('rmRank');
 const rmQues_btn = document.getElementById('rmQues');
 
-
 const ques = query(collection(db, 'key'));
 onSnapshot(ques, (snapshot) => {
   snapshot.forEach((doc) => {
@@ -26,31 +25,17 @@ onSnapshot(ques, (snapshot) => {
                 post_btn.disabled   = false;
                 rmRank_btn.disabled = false;
                 rmQues_btn.disabled = false;
-
+               
                 answerListCallback(handleAnswerListCallback);
-
-
              }
-
         }
     });
-
-
-
   });
 });
 
-
-
-
-
-
-
 function handleAnswerListCallback(newAnswerList) {
   let answerList = newAnswerList;
-
   const boxes = document.querySelectorAll('.box');
-
   boxes.forEach(box => {
     box.addEventListener('click', async (e) => {
 
@@ -60,18 +45,16 @@ function handleAnswerListCallback(newAnswerList) {
 
       if (box.style.backgroundColor === 'lightgreen') {
         box.style.backgroundColor = 'white';
-        currentScore = Math.max(currentScore - 1, 0);
+        currentScore = Math.max(currentScore - 0.1, 0);
       } else {
         box.style.backgroundColor = 'lightgreen';
-        currentScore += 1;
+        currentScore += 0.1;
       }
       await setDoc(docRef, { name: box.dataset.value, score: currentScore });
       
     });
   });
 }
-
-
 
 post_btn.addEventListener('click', async (e) => {
   e.preventDefault();
@@ -90,7 +73,7 @@ post_btn.addEventListener('click', async (e) => {
 });
 
 
-document.getElementById('rmRank').addEventListener('click', async (e) => {
+rmQues_btn.addEventListener('click', async (e) => {
   e.preventDefault();
     const batch = writeBatch(db);
     const q1 = await getDocs(collection(db, 'answers'));
@@ -100,12 +83,12 @@ document.getElementById('rmRank').addEventListener('click', async (e) => {
     await batch.commit();   
     Swal.fire({
           icon: "success",
-          title: "question cleared.",
+          title: "Question cleared.",
           timer: 1500
         });
 });
 
-document.getElementById('rmQues').addEventListener('click', async (e) => {
+rmRank_btn.addEventListener('click', async (e) => {
   e.preventDefault();
     const batch = writeBatch(db);
     const q = await getDocs(collection(db, 'users'));
@@ -113,7 +96,7 @@ document.getElementById('rmQues').addEventListener('click', async (e) => {
     await batch.commit();
     Swal.fire({
           icon: "success",
-          title: "ranking cleared.",
+          title: "Ranking cleared.",
           timer: 1500
         });
 });
