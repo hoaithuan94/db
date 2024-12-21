@@ -28,6 +28,7 @@ answerListCallback(handleAnswerListCallback);
 
 
 const ques = query(collection(db, 'question'));
+question.innerHTML = 'Hiện chưa có câu hỏi nào!';
 onSnapshot(ques, (snapshot) => {
   snapshot.forEach((doc) => {
     question.innerHTML = doc.data().text;
