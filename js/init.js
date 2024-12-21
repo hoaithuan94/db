@@ -34,7 +34,7 @@ onSnapshot(q, (snapshot) => {
     const score = doc.data().score;
 
     const e = document.createElement('li');
-    e.innerHTML = '<span class="rank">'+i+'</span><span class="name">'+name+' - '+id+'</span><span class="score">'+score+' điểm</span>'
+    e.innerHTML = '<span class="rank">'+i+'</span><span class="name">'+name+' - '+id+'</span><span class="score">+'+score+' điểm</span>'
     ranking_list.append(e);
 
   });
