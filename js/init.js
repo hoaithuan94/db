@@ -51,8 +51,6 @@ onSnapshot(q, (snapshot) => {
     ranks.forEach(rank => {
         rank.addEventListener('click', async (e) => {
 
-            console.log(rank.id);
-
             const docSnap = await getDoc(doc(db, 'users', rank.id));
 
             if (docSnap.exists()) {
