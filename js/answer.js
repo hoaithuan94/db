@@ -26,9 +26,8 @@ function handleAnswerListCallback(newAnswerList) {
 
 answerListCallback(handleAnswerListCallback);
 
-
 const ques = query(collection(db, 'question'));
-question.innerHTML = 'Hiện chưa có câu hỏi nào!';
+question.innerHTML = '';
 onSnapshot(ques, (snapshot) => {
   snapshot.forEach((doc) => {
     question.innerHTML = doc.data().text;
@@ -40,9 +39,9 @@ onSnapshot(ques, (snapshot) => {
 sent_btn.addEventListener('click', async (e) => {
   e.preventDefault();
 
-  const mssv = mssv_input.value.trim();
+  const mssv  = mssv_input.value.trim();
   const hoten = hoten_input.value.trim()
-  const text = answer_input.value.trim()
+  const text  = answer_input.value.trim()
 
   if(answerList.length < max_ans){
     if (mssv && text) {
@@ -70,7 +69,7 @@ sent_btn.addEventListener('click', async (e) => {
       else
         Swal.fire({icon: "warning",title: "Nội dung không đầy đủ!"});
   }else
-    Swal.fire({icon: "error",title: "Đã hết lượt gửi câu trả lời!"});
+    Swal.fire({icon: "error",title: "Đã hết lượt nhận câu trả lời!"});
 });
 
 
