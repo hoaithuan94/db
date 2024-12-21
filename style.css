@@ -80,6 +80,7 @@ body {
     border: 1px solid #ccc;
     white-space: pre-wrap;
     overflow: auto;
+    cursor: pointer;
 }
 
 
